@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
 
 <head>
-
+<title>Signup</title>
 </head>
 
-<body>
+<body bgcolor="#262626">
 <script>src="login.js"</script>
 <script src="ca.js"></script>
 
-<p>So... your here to signup eh?</p>
-<form name="accountcreate" onsubmit="createaccount()">
-    <input type="text" name="setuser">Set a username:</input>
+<font color="white"><p align="center">So... you're here to signup eh?</p></font>
+<form name="accountcreate" onsubmit="return createaccount()" align="center" method="post">
+    <font color="white">Set a username:</font>
+    <br>
+    <input type="text" name="setuser" required></input>
     <br><br>
-    <input type="text" name="setpass">Set a password:</input>
+    <font color="white">Set a password:</font>
+    <br>
+    <input type="password" name="setpass" required></input>
     <br><br>
     <input type="submit" value="Create Account"></input>
 </form>

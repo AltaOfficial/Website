@@ -1,38 +1,39 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-<h1>Welcome to Game</h1>
-<title>Website001</title>
+<meta charset="UTF-8">
+<meta name="veiwport" content="width=device-width, initial-scale=1.0">
+<img src="IMG\Altasbot.png" Width="3%" Height="3%" align="left" border="1%" alt="No Image Found.">
+<font color="white"><h1 align="center">Welcome to Game</h1></font>
+<title>Login</title>
 <script src="login.js"></script>
 <script src="ca.js"></script>
+<script>src="signup.js"</script>
 </head>
 
-<hr width="50%" align="right">
+<hr width="50%" align="center">
 
 <body bgcolor=#262626>
 
+<!--simple login form-->
 <form action="loggedin.html" name="loginForm" onsubmit="return login()" method="post" align="center">
-Username:
+<font color="white">Username:</font>
 <br>
-<input type="text" name="username">
+<input type="text" name="username" autocomplete="off" required>
 <br>
-Password:
+<font color="white">Password:</font>
 <br>
-<input type="password" name="password">
+<input type="password" name="password" required>
 <br><br>
-<input type="submit" value="Login">
-<input action="supage.html" name="signup" type="button" value="Signup" onclick="return signUp()" method="post">
+<input type="checkbox" name="checkbox" value="I Am Not A Robot" required>
+<font color="white">I am not a robot</font>
+<br><br>
+<input type="submit" value="Login" >
+<font color="white"><a href="supage.html">Signup</a></font>
 </form>
 
 </body>
-
-
-
-
-
-
-
 
 
 
