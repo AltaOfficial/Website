@@ -7,4 +7,5 @@ function creataccount(){
 
     givenuser = username;
     givenpass = password;
+    alert("account created successfully!");
 }
