@@ -1,4 +1,10 @@
+odd();
 
+function odd(){
+    for(i=0;i>50;i+2%1){
+        document.write(i);
+    }
+}
 
 function createPerson(){
 

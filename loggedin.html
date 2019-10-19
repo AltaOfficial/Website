@@ -7,19 +7,22 @@
     <title>Character Creation</title>
 </head>
 
-<body>
+<body bgcolor=#262626>
 <script>src="game.js"</script>
 <script>src="login.js"</script>
 
-<form name="person" onsubmit="createperson()">
-
-    <input type="text" name="playername">What will be your in-game name?<br><br>
-    <input type="radio" name="gender" value="Male"><br>
-    <input type="radio" name="gender" value="Female"><br><br>
+<font color="white"><form name="person" onsubmit="createperson()">
+    What will be your in-game name?
+    <br>
+    <input type="text" name="playername"><br><br>
+    <input type="radio" name="gender" value="Male">Male<br>
+    <input type="radio" name="gender" value="Female">Female<br><br>
     <input type="checkbox" name="100goldstart" value>Start with 100 gold?<br><br>
 
 
-</form>
+</form></font>
+
+<button type="button" onclick="odd();" width="2%"></button>
 </body>
 
 
