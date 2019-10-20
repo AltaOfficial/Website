@@ -2,7 +2,7 @@ odd();
 
 function odd(){
     for(i=0;i>50;i+2%1){
-        document.write(i);
+        console.log(i);
     }
 }
 
@@ -13,5 +13,4 @@ function createPerson(){
     playername: document.forms["person"]["playername"].value,
     goldstart: document.forms["person"]["100goldstart"].value
     };
-}
 
