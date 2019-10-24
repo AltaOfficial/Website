@@ -23,4 +23,9 @@ function login(){
 		alert("Invalid");
 		return false;
 	}
+
+	switch(){
+
+		:
+	}
 }
