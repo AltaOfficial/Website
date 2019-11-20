@@ -1,85 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<img src="IMG\Altasbot.png" Width="3%" Height="3%" align="left" border="1%" alt="No Image Found." title="Logo">
-<font color="white"><h1 align="center">Welcome to Game</h1></font>
-<title>Login</title>
-<script src="login.js"></script>
-<script src="ca.js"></script>
-<script>src="signup.js"</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Main Menu</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+<body>
+    <form name="form1" action="main.html" method="post" onsubmit="return login()" class="form1" align="center">
+        <label for="username">Username:</label><br>
+        <input type="text" name="username" id="username" placeholder="username" autofocus required>
+        <br><label for="password">Password:</label><br>
+        <input type="password" name="password" id="password" placeholder="password" required>
+        <br><br>
+        <input class="submit" type="submit" value="Login" name="submit">
+        <br><br>
+        <a href="signup.html">Create an Account</a>
+    </form>
 
-<hr width="50%" align="center">
 
-<body bgcolor=#262626>
-
-<!--simple login form-->
-<form action="loggedin.html" name="loginForm" onsubmit="return login()" method="post" align="center">
-<font color="white">Username:</font>
-<br>
-<input type="text" name="username" autocomplete="off" required>
-<br>
-<font color="white">Password:</font>
-<br>
-<input type="password" name="password" required>
-<br><br>
-<input type="checkbox" name="checkbox" value="I Am Not A Robot" required>
-<font color="white">I am not a robot</font>
-<br><br>
-<input type="submit" value="Login" >
-<font color="white"><a href="supage.html">Signup</a></font>
-</form>
-
-<!--link to w3Schools but with a list-->
-<br>
-<font color="white"><p align="center">Some helpful links</p></font>
-
-<ul style="list-style-type:none;" align="center">
-    <a href="https://www.w3schools.com" target="_blank"><li>W3Schools</li></a>
-</ul>
-
-<br>
-
-<!--simple table-->
-<div>
-<font color="white"><table border="3%" align="center">
-<tr>
-    <th>Red</th>
-    <th>Blue</th>
-    <th>Green</th>
-</tr>
-<tr>
-    <td bgcolor="red"><a href="https://www.w3schools.com" target="_blank">W3Schools</a></td>
-    <td bgcolor="Blue"></td>
-    <td bgcolor="Green"></td>
-</tr>
-</table></font>
-</div>
-
-<nav align="center">
-    <div>
-        <ul style="list-style-type:none;">
-            <li><a href="#">Home</a></li>
-            <li><a href="https://www.w3schools.com" target="_blank">W3Schools</a></li>
-            <li><a href="#">Services</a></li>
-        </ul>
-    </div>
-</nav>
-
-Stats<progress name="prog" min="0" max="100" value="99"></progress>
-<br>
-<iframe align="center" width="560" height="315" src="https://www.youtube.com/embed/_FOIOkd4Zx0" frameborder="3%" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-<footer align="center"><font color="white">
-    <p>All Rights Reserved, &copy mean corps.</p>
-    <p>Contact Info Here: <a href="someone@gmail.com">someone@gmail.com</a></p>
-</font></footer>
+    <script src="login.js"></script>
+    <script src="main.js"></script>
 </body>
-
-
-
-
 </html>
