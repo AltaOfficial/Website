@@ -8,15 +8,20 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="navbar">
+        <img src="" alt="">
+    </div>
     <form name="form1" action="main.html" method="post" onsubmit="return login()" class="form1" align="center">
         <label for="username">Username:</label><br>
         <input type="text" name="username" id="username" placeholder="username" autofocus required>
         <br><label for="password">Password:</label><br>
         <input type="password" name="password" id="password" placeholder="password" required>
-        <br><br>
+        <br>
+        <p>Invalid username or password</p>
+        <br>
         <input class="submit" type="submit" value="Login" name="submit">
         <br><br>
-        <a href="signup.html">Create an Account</a>
+        <a href="#">Create an Account</a>
     </form>
 
 

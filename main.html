@@ -10,17 +10,30 @@
 <body>
     <h1>Aegeus</h1>
     <hr>
+    <div class="commands">
+        <p>Press A to scavenge</p>
+    </div>
+
+
     <textarea id="textarea1" rows="5" cols="30"></textarea>
-    <p class="commands">Press A to scavenge</p>
     <p id="time">Run time: </p>
-    <div id="stats">
+    <!-- <div id="stats">
         Health
         <br>
         <progress id="health" max="100" value="100"></progress>
         <br>Mana<br>
         <progress id="mana" max="50" value="50"></progress>
         <p id="gold">Gold: 0</p>
+    </div> -->
+
+    <div class="container-health">
+        <div id="health" >40%</div>
     </div>
+
+    <div class="container-mana">
+        <div id="mana">50%</div>
+    </div>
+
     <div class="inv">
         <div class="empty"></div>
         <div class="empty"></div>

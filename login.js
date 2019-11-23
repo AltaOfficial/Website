@@ -5,13 +5,13 @@ function login(){
 
     let user = localStorage.getItem("user");
     let pass = localStorage.getItem("pass");
+    var x = document.querySelector(".form1 p");
 
 
     if(username == user && password == pass){
-        alert("login Successful");
         return true;
     }else{
-        alert("Username or password is incorrect");
+        x.style.display = "inline-block";
         return false;
     }
 }
