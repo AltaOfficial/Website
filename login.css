@@ -10,7 +10,7 @@ body{
 .form-container{
     position: absolute;
     width: 30%;
-    height: 500px;
+    min-height: 31.75em;
     border-radius: 5px;
     background-color: rgb(255, 255, 255);
     margin: 0;
@@ -20,6 +20,7 @@ body{
 }
 
 .form input[type="submit"]{
+    font-family: "Montserrat", sans-serif;
     position: relative;
     display: block;
     color: white;
@@ -27,9 +28,9 @@ body{
     border: none;
     border-radius: 8px;
     width: 40%;
-    height: 30px;
-    top: 20px;
-    font-size: 20px;
+    height: 40px;
+    top: 40px;
+    font-size: 25px;
 }
 
 .form input[type="submit"]:hover{
@@ -44,7 +45,7 @@ body{
     position: relative;
     display: block;
     margin: auto;
-    margin-top: 20px;
+    margin-top: 40px;
 }
 
 #cloud-storage-icon{
@@ -66,4 +67,19 @@ body{
 
 .form input[type="text"], input[type="password"]:focus{
     outline: none;
+}
+
+.form a{
+    font-family: "Montserrat", sans-serif;
+    position: absolute;
+    text-decoration: none;
+    margin-left: 50%;
+    transform: translate(-50%, 0%);
+    margin-top: 50px;
+    color: black;
+    font-size: 20px;
+}
+
+.form a:hover{
+    opacity: 0.8;
 }
