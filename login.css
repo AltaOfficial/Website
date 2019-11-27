@@ -1,0 +1,69 @@
+body{
+    background-image: url("https://wallpapermemory.com/uploads/874/mountain-background-hd-1920x1080-175481.jpg");
+    color: white;
+    line-height: 1.6em;
+    margin: 0;
+    background-repeat: no-repeat;
+    font-family: "Montserrat", sans-serif;
+}
+
+.form-container{
+    position: absolute;
+    width: 30%;
+    height: 500px;
+    border-radius: 5px;
+    background-color: rgb(255, 255, 255);
+    margin: 0;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+}
+
+.form input[type="submit"]{
+    position: relative;
+    display: block;
+    color: white;
+    background-color: #006FFF;
+    border: none;
+    border-radius: 8px;
+    width: 40%;
+    height: 30px;
+    top: 20px;
+    font-size: 20px;
+}
+
+.form input[type="submit"]:hover{
+    opacity: 0.9;
+}
+
+.form input[type="submit"]:focus{
+    outline: none;
+}
+
+.form input{
+    position: relative;
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+}
+
+#cloud-storage-icon{
+    width: 90px;
+    height: 90px;
+    margin-left: 50%;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    transform: translate(-50%, 0%);
+}
+
+.form input[type="text"], input[type="password"]{
+    border: 1px solid black;
+    width: 60%;
+    height: 23px;
+    font-family: "Montserrat", sans-serif;
+    padding-left: 7px;
+}
+
+.form input[type="text"], input[type="password"]:focus{
+    outline: none;
+}

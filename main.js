@@ -2,9 +2,12 @@ let name = localStorage.getItem("ingame-name");
 let log = console.log;
 let body = document.querySelector("body");
 let stats = document.getElementById("stats");
-let texta = document.getElementById("textarea1");
-let healthbar = document.getElementById("health");
-let manabar = document.getElementById("mana");
+let texta = document.getElementById ("textarea1");
+let health = document.getElementById("health");
+let mana = document.getElementById("mana");
+let commands = document.getElementById("commands");
+let manacontainer = document.querySelector(".container-mana");
+let healthcontainer = document.querySelector(".container-health");
 let goldamount = document.getElementById("gold");
 let monsters = [en1, en2];
 texta.textContent = "Welcome to Aegeus, " + name + ".";
@@ -60,21 +63,20 @@ function anyKey(e){
 }
 
 function foundMonster(x, y, z){
-    let health = healthbar.value;
-    let mana = manabar.value;
 
     texta.textContent = "You encountered a " + x;
     texta.textContent += "\nThe " + x + " did " + y + " damage";
     character.health -= y;
-    healthbar.value = character.health;
     texta.textContent += "\nYou deafeated it and earned " + z + " gold.";
     character.gold += z;
     goldamount.textContent = "Gold: " + character.gold;
+    health.style.width = character.health + "%";
+    health.textContent = character.health;
 }
 
 function dead(){ // needs work
-    if(healthbar.value <= 0){
-        var hidethis = [texta, stats]
+    if(health.textContent <= 0){
+        var hidethis = [texta, healthcontainer, manacontainer, runtime, goldamount, commands]
         for(var i of hidethis){
         i.style.display = "none";
         }

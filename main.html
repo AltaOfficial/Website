@@ -10,13 +10,13 @@
 <body>
     <h1>Aegeus</h1>
     <hr>
-    <div class="commands">
+    <div id="commands">
         <p>Press A to scavenge</p>
     </div>
 
 
     <textarea id="textarea1" rows="5" cols="30"></textarea>
-    <p id="time">Run time: </p>
+    <p id="time">Run time: 0:00:00</p>
     <!-- <div id="stats">
         Health
         <br>
@@ -26,12 +26,16 @@
         <p id="gold">Gold: 0</p>
     </div> -->
 
+    <div class="gold">
+        <p id="gold">Gold: <span>0</span></p>
+    </div>
+
     <div class="container-health">
-        <div id="health" >40%</div>
+        <div id="health">100</div>
     </div>
 
     <div class="container-mana">
-        <div id="mana">50%</div>
+        <div id="mana">50</div>
     </div>
 
     <div class="inv">
