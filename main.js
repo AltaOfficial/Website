@@ -20,7 +20,7 @@ function scavenge(){
     texta.textContent = "Scavenging...";
   
     setTimeout(() => {
-        let x = Math.floor(Math.random() * monsters.length) + 1;
+        let x = Math.floor(Math.random() * monsters.length);
         log(x);
 
         switch(x){
@@ -29,15 +29,11 @@ function scavenge(){
             break;
 
             case 1:
-                foundMonster(en1.name, en1.damage, en1.dropamount);
-            break;
-
-            case 2:
-                foundMonster(en2.name, en2.damage, en2.dropamount);
+                foundMonster(monsters[x].name, monsters[x].damage, monsters[x].dropamount);
             break;
 
             default:
-                
+                texta.textContent = "Error";
         }
     }, 2000);
 }
