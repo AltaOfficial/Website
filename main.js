@@ -9,7 +9,7 @@ let commands = document.getElementById("commands");
 let manacontainer = document.querySelector(".container-mana");
 let healthcontainer = document.querySelector(".container-health");
 let goldamount = document.getElementById("gold");
-let monsters = [en1, en2];
+let monsters = [en1, en2, en3, en4, en5, en6, en7, en8, en9];
 texta.textContent = "Welcome to Aegeus, " + name + ".";
 document.addEventListener("keypress", anyKey);
 
