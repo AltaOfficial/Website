@@ -1,6 +1,8 @@
 let name = localStorage.getItem("ingame-name");
 let log = console.log;
 let body = document.querySelector("body");
+let deathscreen = document.getElementById("death-screen");
+let deathtext = document.getElementById("death-txt");
 let stats = document.getElementById("stats");
 let texta = document.getElementById ("textarea1");
 let health = document.getElementById("health");
@@ -10,6 +12,7 @@ let manacontainer = document.querySelector(".container-mana");
 let healthcontainer = document.querySelector(".container-health");
 let goldamount = document.getElementById("gold");
 let monsters = [en1, en2, en3, en4, en5, en6, en7, en8, en9];
+var shopitems = [witem1.name, pitem1.name];
 texta.textContent = "Welcome to Aegeus, " + name + ".";
 document.addEventListener("keypress", anyKey);
 
@@ -48,7 +51,9 @@ function scavenge(){
 
 function update(){
     //log("updated");
-    dead();
+    if(health <= 0){
+        death();
+    }
 }
 
 function anyKey(e){
@@ -61,13 +66,20 @@ function anyKey(e){
 
         break;
 
+        case 111:
+            death();
+        break;
+
+        case 115:
+            shop();
+        break;
+
         default: 
         log("None of the buttons were pressed");
     }
 }
 
 function foundMonster(x, y, z){
-
     texta.textContent = "You encountered a " + x;
     texta.textContent += "\nThe " + x + " did " + y + " damage";
     character.health -= y;
@@ -78,11 +90,13 @@ function foundMonster(x, y, z){
     health.textContent = character.health;
 }
 
-function dead(){ // needs work
-    if(health.textContent <= 0){
-        var hidethis = [texta, healthcontainer, manacontainer, runtime, goldamount, commands]
-        for(var i of hidethis){
-        i.style.display = "none";
-        }
-    }
+function death(){ // needs work
+    log("died");
+    body.style.display = "none";
+    deathscreen.style.display = "flex";
+    deathtext.style.display = "flex";
+}
+
+function shop(){
+    texta.textContent = shopitems;
 }

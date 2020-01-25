@@ -5,9 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Aegeus</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="items.js" defer></script>
+    <script src="enemies.js" defer></script>
+    <script src="main.js" defer></script>
+    <script src="runtime.js" defer></script>
 </head>
 <body>
+    <div id="death-screen">
+        <p id="death-txt">You Died</p>
+        <button value="Restart" id="rst-btn"></button>
+    </div>
     <h1>Aegeus</h1>
     <hr>
     <div id="commands">
@@ -17,14 +26,6 @@
 
     <textarea id="textarea1" rows="5" cols="30"></textarea>
     <p id="time">Run time: 0:00:00</p>
-    <!-- <div id="stats">
-        Health
-        <br>
-        <progress id="health" max="100" value="100"></progress>
-        <br>Mana<br>
-        <progress id="mana" max="50" value="50"></progress>
-        <p id="gold">Gold: 0</p>
-    </div> -->
 
     <div class="gold">
         <p id="gold">Gold: <span>0</span></p>
@@ -39,15 +40,14 @@
     </div>
 
     <div class="inv">
-        <div class="empty"></div>
+        <div class="empty">
+        <div class="filled"></div>
+        </div>
         <div class="empty"></div>
         <div class="empty"></div>
         <div class="empty"></div>
         <div class="empty"></div>
     </div>
 
-    <script src="enemies.js"></script>
-    <script src="main.js"></script>
-    <script src="runtime.js"></script>
 </body>
 </html>
