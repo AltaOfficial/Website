@@ -58,7 +58,14 @@ function anyKey(e){
 
         case 97:
         scavenge();
+        break;
+        
+        case 115:
+            openShop();
+        break;
 
+        case 105:
+            openInventory();
         break;
 
         default: 
@@ -85,4 +92,12 @@ function dead(){ // needs work
         i.style.display = "none";
         }
     }
+}
+
+function openShop(){
+    log("opened shop");
+}
+
+function openInventory(){
+    log("opened inventory");
 }

@@ -7,6 +7,10 @@ body{
     font-family: "Montserrat", sans-serif;
 }
 
+*:focus{
+    outline: none;
+}
+
 .form-container{
     position: absolute;
     width: 30%;
@@ -17,6 +21,7 @@ body{
     top: 50%;
     right: 50%;
     transform: translate(50%, -50%);
+    box-shadow: black ;
 }
 
 .form input[type="submit"]{
