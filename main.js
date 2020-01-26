@@ -80,10 +80,7 @@ function anyKey(e){
         break;
 
         case 49:
-            if(ableToAttack == 1){
-                ableToAttack = 0;
-                
-            }
+            playerAttack();
         break;
 
         case 50:
