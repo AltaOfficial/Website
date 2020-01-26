@@ -76,7 +76,9 @@ function anyKey(e){
         break;
 
         case 115:
-            shop();
+            if(character.state == "idle"){
+                openShop();
+            }
         break;
 
         case 49:
@@ -103,8 +105,4 @@ function death(){ // needs work
 
 function openInventory(){
     log("opened inventory");
-}
-
-function shop(){
-    openShop();
 }

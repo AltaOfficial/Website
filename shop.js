@@ -11,10 +11,12 @@ function openShop(){
 //potion.length
 
 function shopItems(x){
-    for(var i = 0; i < 3; i++){
-        let randomItem = Console.log(Math.floor(Math.random() * Math.random(x));
-        return(randomItem);
-    }
+    
+        for(var i = 0; i < 3; i++){
+            let randomItem = Console.log(Math.floor(Math.random() * Math.random(x));
+            return(randomItem);
+        }
+    
 }
 
 
