@@ -95,10 +95,6 @@ function death(){ // needs work
     deathtext.style.display = "flex";
 }
 
-function openShop(){
-    log("opened shop");
-}
-
 function openInventory(){
     log("opened inventory");
 }
