@@ -5,11 +5,9 @@ var ableToAttack = 0;
 function battlearea(){
     let x = Math.floor(Math.random() * monsters.length);
     foundMonster(monsters[x].name, monsters[x].damage, monsters[x].dropamount);
-    setTimeout(){
-        
-    }
-    ableToAttack = 
-    turnSystem(1);
+    ableToAttack = 1;
+    setTimeout(() => turnSystem(ableToAttack), 5000);
+    
 }
 
 function foundMonster(x, y, z){
@@ -24,8 +22,9 @@ function foundMonster(x, y, z){
 }
 
 function turnSystem(x){
+    log("turn system called");
     if(x == 1){
-    texta.content = "Its your turn now " + name + ", what will you do" + "\n 1:Attack 2:Inventory";
-    
+    texta.textContent = "Its your turn now " + name + ", what will you do" + "\n \n1:Attack 2:Inventory";
+    texta.style.pointerEvents = true;
     }
 }
