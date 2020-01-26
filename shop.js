@@ -5,6 +5,8 @@ function openShop(){
     },5000);
     texta.textContent(shopItem(weapons));
     texta.textContent(shopItem(potions));
+
+    texta.textContent();
 }
 
 //weapons.length
@@ -13,7 +15,7 @@ function openShop(){
 function shopItems(x){
     
         for(var i = 0; i < 3; i++){
-            let randomItem = Console.log(Math.floor(Math.random() * Math.random(x));
+            let randomItem = (Math.floor(Math.random() * Math.random(x));
             return(randomItem);
         }
     
