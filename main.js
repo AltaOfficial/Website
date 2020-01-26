@@ -1,7 +1,7 @@
 let name = localStorage.getItem("ingame-name");
 let log = console.log;
 let body = document.querySelector("body");
-let deathscreen = document.getElementById("death-screen");
+const deathscreen = document.getElementById("death-screen");
 let deathtext = document.getElementById("death-txt");
 let stats = document.getElementById("stats");
 let texta = document.getElementById ("textarea1");
