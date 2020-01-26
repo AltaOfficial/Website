@@ -11,7 +11,6 @@ let commands = document.getElementById("commands");
 let manacontainer = document.querySelector(".container-mana");
 let healthcontainer = document.querySelector(".container-health");
 let goldamount = document.getElementById("gold");
-let monsters = [en1, en2, en3, en4, en5, en6, en7, en8, en9];
 var shopitems = [witem1.name, pitem1.name];
 texta.textContent = "Welcome to Aegeus, " + name + ".";
 document.addEventListener("keypress", anyKey);
@@ -20,6 +19,7 @@ setInterval(update, 500);
 
 function scavenge(){
     log("scavenged");
+    character.state = "attacking";
     texta.textContent = "Scavenging...";
   
     setTimeout(() => {
@@ -40,7 +40,7 @@ function scavenge(){
             case 7:
             case 8:
             case 9:
-                foundMonster(monsters[x].name, monsters[x].damage, monsters[x].dropamount);
+                character.state = "attacking";
             break;
 
             default:
@@ -53,6 +53,9 @@ function update(){
     //log("updated");
     if(health <= 0){
         death();
+    }
+    if(character.state = "attacking"){
+        battlearea();
     }
 }
 
@@ -86,17 +89,6 @@ function anyKey(e){
     }
 }
 
-function foundMonster(x, y, z){
-    texta.textContent = "You encountered a " + x;
-    texta.textContent += "\nThe " + x + " did " + y + " damage";
-    character.health -= y;
-    texta.textContent += "\nYou deafeated it and earned " + z + " gold.";
-    character.gold += z;
-    goldamount.textContent = "Gold: " + character.gold;
-    health.style.width = character.health + "%";
-    health.textContent = character.health;
-}
-
 function death(){ // needs work
     log("died");
     body.style.display = "none";
@@ -110,6 +102,7 @@ function openShop(){
 
 function openInventory(){
     log("opened inventory");
+}
 
 function shop(){
     texta.textContent = shopitems;
