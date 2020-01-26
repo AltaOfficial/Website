@@ -64,11 +64,7 @@ function anyKey(e){
     switch(e.charCode){
 
         case 97:
-        scavenge();
-        break;
-        
-        case 115:
-            openShop();
+            scavenge();
         break;
 
         case 105:
@@ -83,6 +79,19 @@ function anyKey(e){
             shop();
         break;
 
+        case 49:
+            if(ableToAttack == 1){
+                ableToAttack = 0;
+                
+            }
+        break;
+
+        case 50:
+            if(ableToAttack == 1){
+
+            }
+        break;
+
         default: 
         log("None of the buttons were pressed");
     }
@@ -95,14 +104,11 @@ function death(){ // needs work
     deathtext.style.display = "flex";
 }
 
-function openShop(){
-    log("opened shop");
-}
-
 function openInventory(){
     log("opened inventory");
 }
 
 function shop(){
+    log("opened shop");
     texta.textContent = shopitems;
 }
