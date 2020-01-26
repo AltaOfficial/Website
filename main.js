@@ -106,6 +106,5 @@ function openInventory(){
 }
 
 function shop(){
-    log("opened shop");
-    texta.textContent = shopitems;
+    openShop();
 }

@@ -13,7 +13,7 @@ const weapons = [
 ];
 
 //potions
-const potion = [
+const potions = [
     pItem1 = new items("Small health potion", 0, 0, 10, "health"),
     pItem2 = new items("Health potion", 0, 0, 25, "health"),
     pItem3 = new items("Large health potion", 0, 0, 50, "health"),
