@@ -3,14 +3,14 @@ var pUsedTurns; //amount of turns player has used
 var ableToAttack = 0;
 
 function battlearea(){
-    let x = Math.floor(Math.random() * monsters.length);
-    foundMonster(monsters[x].name, monsters[x].damage, monsters[x].dropamount);
-    sessionStorage.setItem("currentMonster", monsters[x]);
+    var x = Math.floor(Math.random() * monsters.length);
+    foundMonster(monsters[x].name, monsters[x].damage, monsters[x].dropamount, x);
+    localStorage.setItem("currentMonster", JSON.stringify(monsters[x]));
     ableToAttack = 1;
-    setTimeout(() => turnSystem(ableToAttack), 5000);
+    setTimeout(() => turnSystem(ableToAttack), 3000);
 }
 
-function foundMonster(x, y, z){
+function foundMonster(x, y, z, s){
     texta.textContent = "You encountered a " + x;
     texta.textContent += "\nThe " + x + " did " + y + " damage";
     character.health -= y;
@@ -30,15 +30,15 @@ function turnSystem(x){
 }
 
 function playerAttack(){
-    x = character.equipped.maxdamage;
     if(ableToAttack == 1){
         ableToAttack = 0;
-        var y = sessionStorage.getItem("currentMonster");
+        var y = JSON.parse(localStorage.getItem("currentMonster"));
+        var x = JSON.parseint()y.health;
         
-        y.health -= x; // equipped weapons damage is subtracted from the monsters health
-        texta.textContent = "You've inflicted " + x + " damage onto the " + y.name + "\nThe " + y.name + " has " + y.health + " left";
+        y.health -= character.equipped.maxdamage; // equipped weapons damage is subtracted from the monsters health
+        texta.textContent = "You've inflicted " + character.equipped.maxdamage + " damage onto the " + y.name + "\nThe " + y.name + " has " + x + " health left";
     }
-    setTimeout(monsterAttack(), 2000);
+    //setTimeout(monsterAttack(), 2000);
     
 }
 
@@ -46,4 +46,8 @@ function monsterAttack(){
     if(character.health > 0){
         monsterAttack();
     }
+}
+
+function battleEnd(){
+    character.state = "idle";
 }
