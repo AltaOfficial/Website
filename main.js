@@ -76,9 +76,9 @@ function anyKey(e){
         break;
 
         case 115:
-            if(character.state == "idle"){
+            //if(character.state == "idle"){
                 openShop();
-            }
+            //}
         break;
 
         case 49:
