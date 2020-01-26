@@ -1,5 +1,5 @@
 //weapons
-var weapons = [
+const weapons = [
     wItem1 = new items("Wooden sword", 1, 5, 5, "none"),
     wItem2 = new items("Iron sword", 6, 10, 10, "none"),
     wItem3 = new items("Meat cleaver", 11, 13, 11, "none"),
@@ -13,7 +13,7 @@ var weapons = [
 ];
 
 //potions
-var potion = [
+const potion = [
     pItem1 = new items("Small health potion", 0, 0, 10, "health"),
     pItem2 = new items("Health potion", 0, 0, 25, "health"),
     pItem3 = new items("Large health potion", 0, 0, 50, "health"),
