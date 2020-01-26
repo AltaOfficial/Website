@@ -1,10 +1,14 @@
 var mUsedTurns; //amount of turns monster has used
 var pUsedTurns; //amount of turns player has used
-var ableToAttack;
+var ableToAttack = 0;
 
 function battlearea(){
     let x = Math.floor(Math.random() * monsters.length);
     foundMonster(monsters[x].name, monsters[x].damage, monsters[x].dropamount);
+    setTimeout(){
+        
+    }
+    ableToAttack = 
     turnSystem(1);
 }
 
@@ -21,7 +25,7 @@ function foundMonster(x, y, z){
 
 function turnSystem(x){
     if(x == 1){
-    texta.content = "Its your turn now " + name + ", what will you do" + "\n ";
+    texta.content = "Its your turn now " + name + ", what will you do" + "\n 1:Attack 2:Inventory";
     
     }
 }

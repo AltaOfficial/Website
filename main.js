@@ -11,7 +11,6 @@ let commands = document.getElementById("commands");
 let manacontainer = document.querySelector(".container-mana");
 let healthcontainer = document.querySelector(".container-health");
 let goldamount = document.getElementById("gold");
-var shopitems = [witem1.name, pitem1.name];
 texta.textContent = "Welcome to Aegeus, " + name + ".";
 document.addEventListener("keypress", anyKey);
 
@@ -19,7 +18,6 @@ setInterval(update, 500);
 
 function scavenge(){
     log("scavenged");
-    character.state = "attacking";
     texta.textContent = "Scavenging...";
   
     setTimeout(() => {
@@ -46,6 +44,10 @@ function scavenge(){
             default:
                 texta.textContent = "Error";
         }
+        if(character.state == "attacking"){
+            log("battle area called");
+            battlearea();
+        }
     }, 2000);
 }
 
@@ -53,9 +55,6 @@ function update(){
     //log("updated");
     if(health <= 0){
         death();
-    }
-    if(character.state = "attacking"){
-        battlearea();
     }
 }
 
