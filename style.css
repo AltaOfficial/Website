@@ -217,7 +217,3 @@ h1{
     display: none;
     font-family: "Montserrat", sans-serif;
 }
-
-#textarea1{
-    pointer-events: none;
-}

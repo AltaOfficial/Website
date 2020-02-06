@@ -31,12 +31,12 @@ function turnSystem(x){
 
 function playerAttack(){
     if(ableToAttack == 1){
-        ableToAttack = 0;
-        /*var y = JSON.parse(localStorage.getItem("currentMonster"));
-        var x = JSON.parseint()y.health;*/
+        var y = JSON.parse(localStorage.getItem("currentMonster"));
+        monsterHealth = JSON.parse(y.health);
         
-        y.health -= character.equipped.maxdamage; // equipped weapons damage is subtracted from the monsters health
-        texta.textContent = "You've inflicted " + character.equipped.maxdamage + " damage onto the " + y.name + "\nThe " + y.name + " has " + x + " health left";
+        monsterHealth -= character.equipped.damagemax; // equipped weapons damage is subtracted from the monsters health
+        texta.textContent = "You've inflicted " + character.equipped.maxdamage + " damage onto the " + y.name + "\nThe " + y.name + " has " + monsterHealth + " health left";
+        ableToAttack = 0;
     }
     //setTimeout(monsterAttack(), 2000);
     
