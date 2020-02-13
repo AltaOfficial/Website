@@ -35,16 +35,20 @@ function playerAttack(){
         monsterHealth = JSON.parse(y.health);
         
         monsterHealth -= character.equipped.damagemax; // equipped weapons damage is subtracted from the monsters health
-        texta.textContent = "You've inflicted " + character.equipped.maxdamage + " damage onto the " + y.name + "\nThe " + y.name + " has " + monsterHealth + " health left";
+        texta.textContent = "You've inflicted " + character.equipped.damagemax + " damage onto the " + y.name + "\nThe " + y.name + " has " + monsterHealth + " health left";
         ableToAttack = 0;
     }
-    //setTimeout(monsterAttack(), 2000);
+
+    if(character.health > 0){
+    }
     
 }
 
 function monsterAttack(){
-    if(character.health > 0){
-        monsterAttack();
+    var y = JSON.parse(localStorage.getItem("currentMonster"));
+    if(monsterHealth > 0){
+        log("monster attacked");
+        character.health -= y.damage;
     }
 }
 
