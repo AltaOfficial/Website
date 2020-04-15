@@ -4,12 +4,12 @@ var ableToAttack = 0;
 
 
 function battlearea(){
-    character.state = "attacking";
+    log("battle area called");
     var x = Math.floor(Math.random() * monsters.length);
     foundMonster(monsters[x].name, monsters[x].damage, monsters[x].dropamount, x);
     localStorage.setItem("currentMonster", JSON.stringify(monsters[x]));
     ableToAttack = 1;
-    setTimeout(() => turnSystem(ableToAttack), 3000);
+    setTimeout(() => turnSystem(), 3000);
 }
 
 function foundMonster(x, y, z, s){
@@ -20,25 +20,24 @@ function foundMonster(x, y, z, s){
     health.textContent = character.health;
 }
 
-function turnSystem(x){
+function turnSystem(){
     log("turn system called");
-    if(x == 1){
+    if(ableToAttack == 1){
     texta.textContent = "Its your turn now " + name + ", what will you do" + "\n \n1:Attack 2:Inventory\n";
-    texta.style.pointerEvents = "auto";
+    
     }else{
         log("error: not player turn");
     }
 }
 
 function playerAttack(){
-    log("Player Attacked");
+    ableToAttack = 0;
+    var y = JSON.parse(localStorage.getItem("currentMonster"));
+    var monsterHealth = JSON.parse(y.health);
     if(ableToAttack == 1 && character.state == "attacking"){
-        var y = JSON.parse(localStorage.getItem("currentMonster"));
-        monsterHealth = JSON.parse(y.health);
-        
+        log("Player Attacked");
         monsterHealth -= character.equipped.damagemax; // equipped weapons damage is subtracted from the monsters health
         texta.textContent = "You've inflicted " + character.equipped.damagemax + " damage onto the " + y.name + "\nThe " + y.name + " has " + monsterHealth + " health left";
-        ableToAttack = 0;
     }else{
         log("error: not player turn or not attacking");
     }
@@ -49,7 +48,8 @@ function playerAttack(){
     if(monsterHealth <= 0){
         battleEnd();
     }else{
-        monsterAttack();
+        log("monster attacked called");
+        setTimeout(monsterAttack(), 3000);
     }
     
 }
@@ -61,7 +61,7 @@ function monsterAttack(){
         character.health -= y.damage;
     }
     ableToAttack = 1;
-    turnSystem(ableToAttack);
+    turnSystem();
 }
 
 function battleEnd(){ 
@@ -72,7 +72,8 @@ function battleEnd(){
     character.gold += z;
     goldamount.textContent = "Gold: " + character.gold;
     character.state = "idle";
-    setTimeout(() => textaClear(), 2000);
+    log("battle ended");
+    setTimeout(() => textaClear(), 5000);
     }
 }
 

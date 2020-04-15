@@ -1,5 +1,5 @@
 var character = {
-    health: 100, mana: 100, gold: 0, state: "idle", level: 0, equipped: wItem1, ownedWeapons: wItem1
+    health: 100, maxHealth: 100, mana: 100, maxMana: 100, maxExp: 100, exp: 0, gold: 0, state: "idle", level: 0, equipped: wItem1, ownedWeapons: wItem1
 };
 var monsters = [
     en1 = new monster("Slime", 2, 1, 5, 1),

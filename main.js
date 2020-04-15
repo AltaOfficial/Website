@@ -7,9 +7,11 @@ let stats = document.getElementById("stats");
 let texta = document.getElementById ("textarea1");
 let health = document.getElementById("health");
 let mana = document.getElementById("mana");
+let exp = document.getElementById("exp");
 let commands = document.getElementById("commands");
 let manacontainer = document.querySelector(".container-mana");
 let healthcontainer = document.querySelector(".container-health");
+let expcontainer = document.querySelector(".container-exp");
 let goldamount = document.getElementById("gold");
 texta.textContent = "Welcome to Aegeus, " + name + ".";
 document.addEventListener("keypress", anyKey);
@@ -42,10 +44,9 @@ function scavenge(){
             break;
 
             default:
-                texta.textContent = "Error";
+                texta.textContent = "error";
         }
         if(character.state == "attacking"){
-            log("battle area called");
             battlearea();
         }
     }, 2000);
@@ -53,6 +54,8 @@ function scavenge(){
 
 function update(){
     //log("updated");
+    if(exp )
+
     if(health <= 0){
         death();
     }
@@ -82,12 +85,8 @@ function anyKey(e){
         break;
 
         case 49:
-            playerAttack();
-        break;
-
-        case 50:
             if(ableToAttack == 1 && character.state == "attacking"){
-
+                playerAttack();
             }
         break;
 
