@@ -7,19 +7,16 @@ function openShop(){
     setTimeout(() =>{
         texta.textContent = "";
         let shopItemNumber = 0;
-        for(var i = 0; i < 3; i++){
+        for(var i = 0; i < weapons.length; i++){
             shopItemNumber++;
-            weaponValue = shopItems(weapons);
-            texta.textContent += weapons[weaponValue].name + "  $" + weapons[weaponValue].shopvalue + "\n";
-            shopItemNumber++;
-            potionValue = shopItems(potions);
-            texta.textContent += potions[potionValue].name + "  $" + potions[potionValue].shopvalue + "\n";
+            texta.textContent += shopItemNumber + ". " + weapons[weaponValue].name + "  $" + weapons[weaponValue].shopvalue + "\n";
+            weaponValue++;
         }
-    },2500);
-    //texta.textContent();
-}
 
-function shopItems(x){
-    let randomItem = (Math.floor(Math.random() * x.length));
-    return(randomItem);
+        for(var i = 0; i < potions.length; i++){
+            shopItemNumber++;
+            texta.textContent += shopItemNumber + ". " + potions[potionValue].name + "  $" + potions[potionValue].shopvalue + "\n";
+            potionValue++;
+        }
+    }, 2500);
 }

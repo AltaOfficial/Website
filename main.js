@@ -76,9 +76,9 @@ function anyKey(e){
         break;
 
         case 115:
-            //if(character.state == "idle"){
+            if(character.state == "idle"){
                 openShop();
-            //}
+            }
         break;
 
         case 49:
@@ -86,9 +86,13 @@ function anyKey(e){
         break;
 
         case 50:
-            if(ableToAttack == 1){
+            if(ableToAttack == 1 && character.state == "attacking"){
 
             }
+        break;
+
+        case 73:
+            openInventory();
         break;
 
         default: 
@@ -105,4 +109,9 @@ function death(){ // needs work
 
 function openInventory(){
     log("opened inventory");
+    texta.textContent = "Weapon Equipped: " + character.equipped.name + "\nWeapons Owned: " + character.ownedWeapons.name + "\nGold: " + character.gold
+}
+
+function textaClear(){
+    texta.textContent = "";
 }

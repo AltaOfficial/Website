@@ -2,7 +2,9 @@ var mUsedTurns; //amount of turns monster has used
 var pUsedTurns; //amount of turns player has used
 var ableToAttack = 0;
 
+
 function battlearea(){
+    character.state = "attacking";
     var x = Math.floor(Math.random() * monsters.length);
     foundMonster(monsters[x].name, monsters[x].damage, monsters[x].dropamount, x);
     localStorage.setItem("currentMonster", JSON.stringify(monsters[x]));
@@ -14,9 +16,6 @@ function foundMonster(x, y, z, s){
     texta.textContent = "You encountered a " + x;
     texta.textContent += "\nThe " + x + " did " + y + " damage";
     character.health -= y;
-    //texta.textContent += "\nYou defeated it and earned " + z + " gold.";
-    //character.gold += z;
-    //goldamount.textContent = "Gold: " + character.gold;
     health.style.width = character.health + "%";
     health.textContent = character.health;
 }
@@ -26,32 +25,55 @@ function turnSystem(x){
     if(x == 1){
     texta.textContent = "Its your turn now " + name + ", what will you do" + "\n \n1:Attack 2:Inventory\n";
     texta.style.pointerEvents = "auto";
+    }else{
+        log("error: not player turn");
     }
 }
 
 function playerAttack(){
-    if(ableToAttack == 1){
+    log("Player Attacked");
+    if(ableToAttack == 1 && character.state == "attacking"){
         var y = JSON.parse(localStorage.getItem("currentMonster"));
         monsterHealth = JSON.parse(y.health);
         
         monsterHealth -= character.equipped.damagemax; // equipped weapons damage is subtracted from the monsters health
         texta.textContent = "You've inflicted " + character.equipped.damagemax + " damage onto the " + y.name + "\nThe " + y.name + " has " + monsterHealth + " health left";
         ableToAttack = 0;
+    }else{
+        log("error: not player turn or not attacking");
     }
 
     if(character.health > 0){
+    }
+
+    if(monsterHealth <= 0){
+        battleEnd();
+    }else{
+        monsterAttack();
     }
     
 }
 
 function monsterAttack(){
     var y = JSON.parse(localStorage.getItem("currentMonster"));
-    if(monsterHealth > 0){
+    if(y.health > 0){
         log("monster attacked");
         character.health -= y.damage;
     }
+    ableToAttack = 1;
+    turnSystem(ableToAttack);
 }
 
-function battleEnd(){
+function battleEnd(){ 
+    if(character.state == "attacking"){
+    var y = JSON.parse(localStorage.getItem("currentMonster"));
+    var z = y.dropamount;
+    texta.textContent += "\nYou defeated it and earned " + z + " gold.";
+    character.gold += z;
+    goldamount.textContent = "Gold: " + character.gold;
     character.state = "idle";
+    setTimeout(() => textaClear(), 2000);
+    }
 }
+
+//need to add monster health to local storage for updating methods
