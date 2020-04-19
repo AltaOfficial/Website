@@ -16,8 +16,6 @@ let goldamount = document.getElementById("gold");
 texta.textContent = "Welcome to Aegeus, " + name + ".";
 document.addEventListener("keypress", anyKey);
 
-setInterval(update, 500);
-
 function scavenge(){
     log("scavenged");
     texta.textContent = "Scavenging...";
@@ -53,7 +51,7 @@ function scavenge(){
 }
 
 function update(){
-    //log("updated");
+    log("updated");
     if(exp )
 
     if(health <= 0){
@@ -85,7 +83,7 @@ function anyKey(e){
         break;
 
         case 49:
-            if(ableToAttack == 1 && character.state == "attacking"){
+            if(ableToAttack == true && character.state == "attacking"){
                 playerAttack();
             }
         break;
