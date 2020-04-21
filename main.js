@@ -52,8 +52,9 @@ function scavenge(){
 
 function update(){
     log("updated");
-    if(exp )
-
+    goldamount.textContent = "Gold: " + character.gold;
+    exp.style.width = character.exp + "%";
+    exp.textContent = character.exp;
     if(health <= 0){
         death();
     }

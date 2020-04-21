@@ -42,7 +42,7 @@ function playerAttack(){
     }
 
     if(monsterHealth > 0){
-        setTimeout(() => monsterAttack(), 5000);
+        setTimeout(() => monsterAttack(), 4000);
     }else{
         battleEnd();
     }
@@ -65,9 +65,13 @@ function battleEnd(){
     if(character.state == "attacking"){
     var y = JSON.parse(localStorage.getItem("currentMonster"));
     var z = y.dropamount;
-    texta.textContent += "\nYou defeated it and earned " + z + " gold.";
+    textaClear();
+    texta.textContent += "You defeated the "+ y.name + ", earned " + z + " gold and " + y.exp + " EXP";
+    character.exp += y.exp
     character.gold += z;
     goldamount.textContent = "Gold: " + character.gold;
+    exp.style.width = character.exp + "%";
+    exp.textContent = character.exp;
     character.state = "idle";
     log("battle ended");
     setTimeout(() => textaClear(), 3000);

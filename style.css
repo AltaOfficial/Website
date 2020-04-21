@@ -234,3 +234,11 @@ h1{
     display: none;
     font-family: "Montserrat", sans-serif;
 }
+
+.textGameButton{
+    margin-right: 6%;
+}
+
+#gameScreen{
+    border: solid white 1px;
+}
