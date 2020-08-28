@@ -1,20 +1,19 @@
 let name = localStorage.getItem("ingame-name");
 let log = console.log;
 let body = document.querySelector("body");
-const deathscreen = document.getElementById("death-screen");
-let deathtext = document.getElementById("death-txt");
 let stats = document.getElementById("stats");
 let texta = document.getElementById ("textarea1");
 let health = document.getElementById("health");
 let mana = document.getElementById("mana");
-let exp = document.getElementById("exp");
 let commands = document.getElementById("commands");
 let manacontainer = document.querySelector(".container-mana");
 let healthcontainer = document.querySelector(".container-health");
-let expcontainer = document.querySelector(".container-exp");
 let goldamount = document.getElementById("gold");
+let monsters = [en1, en2, en3, en4, en5, en6, en7, en8, en9];
 texta.textContent = "Welcome to Aegeus, " + name + ".";
 document.addEventListener("keypress", anyKey);
+
+setInterval(update, 500);
 
 function scavenge(){
     log("scavenged");
@@ -28,7 +27,7 @@ function scavenge(){
             case 0:
                 texta.textContent = "Found nothing";
             break;
-
+            
             case 1:
             case 2:
             case 3:
@@ -38,26 +37,18 @@ function scavenge(){
             case 7:
             case 8:
             case 9:
-                character.state = "attacking";
+                foundMonster(monsters[x].name, monsters[x].damage, monsters[x].dropamount);
             break;
 
             default:
-                texta.textContent = "error";
-        }
-        if(character.state == "attacking"){
-            battlearea();
+                texta.textContent = "Error";
         }
     }, 2000);
 }
 
 function update(){
-    log("updated");
-    goldamount.textContent = "Gold: " + character.gold;
-    exp.style.width = character.exp + "%";
-    exp.textContent = character.exp;
-    if(health <= 0){
-        death();
-    }
+    //log("updated");
+    dead();
 }
 
 function anyKey(e){
@@ -66,31 +57,8 @@ function anyKey(e){
     switch(e.charCode){
 
         case 97:
-            scavenge();
-        break;
+        scavenge();
 
-        case 105:
-            openInventory();
-        break;
-
-        case 111:
-            death();
-        break;
-
-        case 115:
-            if(character.state == "idle"){
-                openShop();
-            }
-        break;
-
-        case 49:
-            if(ableToAttack == true && character.state == "attacking"){
-                playerAttack();
-            }
-        break;
-
-        case 73:
-            openInventory();
         break;
 
         default: 
@@ -98,18 +66,23 @@ function anyKey(e){
     }
 }
 
-function death(){ // needs work
-    log("died");
-    body.style.display = "none";
-    deathscreen.style.display = "flex";
-    deathtext.style.display = "flex";
+function foundMonster(x, y, z){
+
+    texta.textContent = "You encountered a " + x;
+    texta.textContent += "\nThe " + x + " did " + y + " damage";
+    character.health -= y;
+    texta.textContent += "\nYou deafeated it and earned " + z + " gold.";
+    character.gold += z;
+    goldamount.textContent = "Gold: " + character.gold;
+    health.style.width = character.health + "%";
+    health.textContent = character.health;
 }
 
-function openInventory(){
-    log("opened inventory");
-    texta.textContent = "Weapon Equipped: " + character.equipped.name + "\nWeapons Owned: " + character.ownedWeapons.name + "\nGold: " + character.gold
-}
-
-function textaClear(){
-    texta.textContent = "";
+function dead(){ // needs work
+    if(health.textContent <= 0){
+        var hidethis = [texta, healthcontainer, manacontainer, runtime, goldamount, commands]
+        for(var i of hidethis){
+        i.style.display = "none";
+        }
+    }
 }
